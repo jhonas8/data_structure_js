@@ -1,0 +1,28 @@
+{
+  "name": "data_structure",
+  "version": "1.0.0",
+  "description": "Library for implement common used data structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhonas8/data_structure_js.git"
+  },
+  "keywords": [
+    "data",
+    "structure",
+    "javascript",
+    "node"
+  ],
+  "author": "jhonas8",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhonas8/data_structure_js/issues"
+  },
+  "homepage": "https://github.com/jhonas8/data_structure_js#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
