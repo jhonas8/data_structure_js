@@ -1,12 +1,10 @@
 export class Queue {
-  #items;
-  #lowestCounter;
-  #counter;
+  items;
+  lowestCounter;
+  counter;
 
   constructor() {
-    this.#items = {};
-    this.#lowestCounter = 0;
-    this.#counter = 0;
+    this.clear();
 
     this.enqueue = this.enqueue.bind(this);
     this.dequeue = this.dequeue.bind(this);
@@ -18,7 +16,7 @@ export class Queue {
   }
 
   size() {
-    return this.#counter - this.#lowestCounter;
+    return this.counter - this.lowestCounter;
   }
 
   isEmpty() {
@@ -27,36 +25,36 @@ export class Queue {
 
   // this method does not respect the FIFO principle in order of priorizing the performance
   clear() {
-    this.#items = {};
-    this.#count = 0;
-    this.#lowestCounter = 0;
+    this.items = {};
+    this.counter = 0;
+    this.lowestCounter = 0;
   }
 
   enqueue(item) {
-    this.#items[this.#counter] = item;
-    this.#counter++;
+    this.items[this.counter] = item;
+    this.counter++;
   }
 
   dequeue() {
-    const returning = this.#items[this.#lowestCounter];
-    delete this.#itmes[this.#lowestCounter];
+    const returning = this.items[this.lowestCounter];
+    delete this.items[this.lowestCounter];
 
-    this.#lowestCounter++;
+    this.lowestCounter++;
 
     return returning;
   }
 
   peek() {
-    return this.#items[this.#lowestCounter];
+    return this.items[this.lowestCounter];
   }
 
   toString() {
     if (this.isEmpty()) return "";
 
-    let string = `${this.#items[this.#lowestCounter]};`;
+    let string = `${this.items[this.lowestCounter]};`;
 
-    for (let i = this.#lowestCounter + 1; i < this.#counter; i++) {
-      string += `${this.#items[i]};`;
+    for (let i = this.lowestCounter + 1; i < this.counter; i++) {
+      string += `${this.items[i]};`;
     }
 
     return string;
